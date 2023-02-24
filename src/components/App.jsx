@@ -10,10 +10,6 @@ export class App extends Component {
     bad: 0,
   };
 
-  capitalize = str => {
-    return str.toUpperCase()
-  };
-
   countTotalFeedback = (a, b, c) => {
     return a + b + c;
   };
