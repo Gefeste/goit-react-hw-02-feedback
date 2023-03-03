@@ -10,7 +10,6 @@ export const FeedbackOptions = ({
   neutral,
   bad,
   options,
-  toUp,
 }) => {
   return (
     <div>
