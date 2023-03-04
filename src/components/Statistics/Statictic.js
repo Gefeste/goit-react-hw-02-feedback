@@ -23,7 +23,6 @@ export const Statistic = ({ percentage, total, good, neutral, bad }) => {
   );
 };
 
-
 Statistic.propTypes = {
   percentage: propTypes.func.isRequired,
   total: propTypes.func.isRequired,

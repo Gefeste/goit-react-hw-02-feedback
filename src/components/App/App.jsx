@@ -1,3 +1,4 @@
+import { Statistic } from 'components/Statistics/Statictic';
 import { Component } from 'react';
 import { FeedbackOptions } from '../FeedbackNavigation/FeedbackNavigation';
 import { GlobalStyle } from '../GlobalSyle';
@@ -26,18 +27,28 @@ export class App extends Component {
   };
 
   render() {
+    const {
+      state,
+      capitalize,
+      addFeedback,
+      countTotalFeedback,
+      countPositiveFeedbackPercentage,
+    } = this;
     return (
       <Container>
         <Section title="Please leave feedback">
           <FeedbackOptions
-            toUp={this.capitalize}
+            toUp={capitalize}
             options={Object.keys(this.state)}
-            percentage={this.countPositiveFeedbackPercentage}
-            total={this.countTotalFeedback}
-            onLeaveFeedback={this.addFeedback}
-            good={this.state.good}
-            neutral={this.state.neutral}
-            bad={this.state.bad}
+            onLeaveFeedback={addFeedback}
+          />
+
+          <Statistic
+            total={countTotalFeedback}
+            good={state.good}
+            neutral={state.neutral}
+            bad={state.bad}
+            percentage={countPositiveFeedbackPercentage}
           />
           <GlobalStyle />
         </Section>

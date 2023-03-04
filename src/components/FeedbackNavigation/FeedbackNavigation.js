@@ -1,16 +1,7 @@
-import { Statistic } from 'components/Statistics/Statictic';
 import propTypes from 'prop-types';
 import { Button } from './FeedbackNavigation.styled';
 
-export const FeedbackOptions = ({
-  percentage,
-  total,
-  onLeaveFeedback,
-  good,
-  neutral,
-  bad,
-  options,
-}) => {
+export const FeedbackOptions = ({ onLeaveFeedback, options }) => {
   return (
     <div>
       {options.map(option => {
@@ -24,24 +15,11 @@ export const FeedbackOptions = ({
           </Button>
         );
       })}
-
-      <Statistic
-        total={total}
-        good={good}
-        neutral={neutral}
-        bad={bad}
-        percentage={percentage}
-      />
     </div>
   );
 };
 
 FeedbackOptions.propTypes = {
-  percentage: propTypes.func.isRequired,
-  total: propTypes.func.isRequired,
   onLeaveFeedback: propTypes.func.isRequired,
-  good: propTypes.number.isRequired,
-  neutral: propTypes.number.isRequired,
-  bad: propTypes.number.isRequired,
   options: propTypes.array.isRequired,
 };
